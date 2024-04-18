@@ -1,0 +1,54 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+	title: string;
+	wrapperClass: string;
+}
+
+const {
+	title,
+	wrapperClass = null
+} = Astro.props;
+---
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://use.typekit.net/bar1poh.css">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions /> <!-- TODO: test -->
+	</head>
+	<body>
+		<main class="main u-padding-top-off" id="main">
+			<slot name="hero" />
+
+			<div class="content-wrapper" class={wrapperClass ? `${wrapperClass}-content-wrapper` : ''}>
+				<div class="section primary-content">
+					<slot />
+				</div>
+
+				<div class="section secondary-content">
+					<slot name="sidebar" />
+				</div>
+
+				<div class="section cta-content">
+					<slot name="cta" />
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
+
+<!-- <style is:global lang="scss">
+	@import '../styles/main';
+
+	.content-wrapper {
+	}
+</style> -->
