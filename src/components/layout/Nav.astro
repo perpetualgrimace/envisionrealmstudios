@@ -1,0 +1,25 @@
+---
+const links = [
+	{title: "Home", href: "/"},
+	{title: "About", href: "/about"},
+	{title: "Careers", href: "/careers"},
+	{title: "Contact", href: "/contact"}
+];
+---
+
+<nav class="nav">
+	<ul class="nav-list">
+		{links.map(link => (
+			<li class="nav-item">
+				<a class="nav-link" href={link.href}>{link.title}</a>
+			</li>
+		))}
+	</ul>
+</nav>
+
+<style is:global lang="scss">
+	@import '../../styles/global';
+	.nav-link {
+		color: $brown;
+	}
+</style>

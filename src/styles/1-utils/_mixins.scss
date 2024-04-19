@@ -74,7 +74,7 @@
   text-transform: initial;
   letter-spacing: 0.0125em;
   line-height: 1.5;
-  color: $khaki;
+  color: $walnut;
   text-shadow: 0 2px 2rem $black;
 }
 
@@ -114,11 +114,7 @@
   box-shadow: 0 1px 12px $shadow;
 }
 
-@mixin fancy-outline(
-  $offset: 1px,
-  $color: $persian,
-  $radius: $radius-lg
-) {
+@mixin fancy-outline($offset: 1px, $color: $gold, $radius: $radius-lg) {
   @include pseudo;
   position: absolute;
   top: -$offset;

@@ -1,15 +1,15 @@
 html {
   background-color: $black;
-  color: $khaki;
+  color: $walnut;
 }
 
 a {
-  color: $persian;
+  color: $gold;
   transition: color 0.2s ease-out;
 
   &:hover,
   &:focus {
-    color: $persian-light;
+    color: $white;
   }
 }
 
@@ -33,7 +33,7 @@ a {
 .darkglass {
   text-decoration: none;
   background-color: $black;
-  border: 1px solid $tobacco;
+  border: 1px solid $brown;
   border-radius: $radius-md;
   box-shadow: 0 1px 12px 0 $shadow;
 }
@@ -41,7 +41,7 @@ a {
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px dotted rgba($persian, 0.5);
+  outline: 3px dotted rgba($gold, 0.5);
   outline-offset: 3px;
 }
 a:focus:not(:focus-visible),
@@ -52,5 +52,5 @@ button:focus:not(:focus-visible),
 
 ::selection {
   color: $white;
-  background-color: rgba($persian, 0.6);
+  background-color: rgba($gold, 0.6);
 }

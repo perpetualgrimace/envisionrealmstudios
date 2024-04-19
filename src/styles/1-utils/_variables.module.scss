@@ -2,14 +2,14 @@
 // TYPOGRAPHY
 //////////////////////////////////
 
-$body-font: "Arsenal", optima, sans-serif;
-$title-font: $body-font;
+$body-font: "Work Sans", sans-serif;
+$title-font: "Oswald", impact, sans-serif;
 $subhead-font: $body-font;
 
 $body-weight: 400;
 $bold-weight: 700;
-$title-weight: 700;
-$subhead-weight: 700;
+$subhead-weight: 300;
+$title-weight: 600;
 
 $font-size-xl: 3.3rem; // 66px
 $font-size-lg: 1.7rem; // 34px
@@ -21,13 +21,12 @@ $font-size-xs: 0.8rem; // 16px
 // COLORS
 //////////////////////////////////
 
-$white: #efeff0;
-$khaki: #b5a398;
-$persian: #df854b;
-$persian-light: #f0b189;
-$terra-cotta: #993f04;
-$tobacco: #403236;
+$white: #ddd6c6;
+$walnut: #5a523f;
+$brown: #524014;
+$night: #121317;
 $black: #000000;
+$gold: #bca262;
 
 $shadow: rgba($black, 0.25);
 
