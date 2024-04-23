@@ -4,18 +4,19 @@
 
 $body-font: "Work Sans", sans-serif;
 $title-font: "Oswald", impact, sans-serif;
-$subhead-font: $body-font;
+$subhead-font: $title-font;
 
 $body-weight: 400;
 $bold-weight: 700;
 $subhead-weight: 300;
 $title-weight: 600;
 
-$font-size-xl: 3.3rem; // 66px
-$font-size-lg: 1.7rem; // 34px
-$font-size-md: 1.4rem; // 28px
-$font-size-sm: 1.1rem; // 22px
-$font-size-xs: 0.8rem; // 16px
+$font-size-xl: 4.9rem; // 98px
+$font-size-lg: 3rem; // 60px
+$font-size-md: 1.9rem; // 38px
+$font-size-sm: 1.4rem; // 28px
+$font-size-xs: 1.1rem; // 22px
+$font-size-xxs: 0.7rem; // 22px
 
 //////////////////////////////////
 // COLORS

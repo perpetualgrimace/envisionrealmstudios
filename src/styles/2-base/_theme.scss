@@ -1,6 +1,6 @@
 html {
   background-color: $black;
-  color: $walnut;
+  color: $white;
 }
 
 a {
@@ -21,21 +21,12 @@ h4,
 h5,
 h6,
 .u-heading {
-  color: $white;
+  color: $gold;
 }
 
 a {
   text-decoration-thickness: 1px;
   text-underline-offset: 0.125em;
-}
-
-// darkglass theme
-.darkglass {
-  text-decoration: none;
-  background-color: $black;
-  border: 1px solid $brown;
-  border-radius: $radius-md;
-  box-shadow: 0 1px 12px 0 $shadow;
 }
 
 a:focus-visible,

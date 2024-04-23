@@ -58,8 +58,6 @@
   font-family: $title-font;
   font-size: $font-size-xl * 0.75;
   font-weight: $title-weight;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   line-height: 1.25;
   text-shadow: 0 2px 2rem $black;
 
@@ -71,17 +69,15 @@
 @mixin subhead-text {
   font-family: $subhead-font;
   font-weight: $subhead-weight;
-  text-transform: initial;
-  letter-spacing: 0.0125em;
+  text-transform: uppercase;
   line-height: 1.5;
-  color: $walnut;
+  color: $gold;
   text-shadow: 0 2px 2rem $black;
 }
 
 @mixin heading-text {
+  font-family: $title-font;
   font-weight: $bold-weight;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   margin-bottom: $sp-md;
 }
 
@@ -99,10 +95,14 @@
 }
 @mixin font-sm {
   font-size: $font-size-sm;
-  line-height: 1em;
+  line-height: 1.25em;
 }
 @mixin font-xs {
   font-size: $font-size-xs;
+  line-height: 1.5em;
+}
+@mixin font-xxs {
+  font-size: $font-size-xxs;
   line-height: 1.5em;
 }
 
