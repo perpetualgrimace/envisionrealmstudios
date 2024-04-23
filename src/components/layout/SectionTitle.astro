@@ -1,0 +1,42 @@
+---
+import wrench from "../icons/wrench.svg?raw";
+
+const { title, subtitle } = Astro.props;
+---
+
+<div class="section-title u-mb-sm">
+  <span class="section-title-svg">
+    <Fragment set:html={wrench} />
+  </span>
+  <h2 class="section-title-text">
+    {title}
+  </h2>
+  <span class="section-title-svg">
+    <Fragment set:html={wrench} />
+  </span>
+</div>
+
+{subtitle &&
+  <p class="section-title-subtitle u-text-c">{subtitle}</p>
+}
+
+<style is:global lang="scss">
+	@import '../../styles/main';
+
+	.section-title {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+	}
+
+  .section-title-svg:last-child {
+    transform: rotateY(180deg);
+  }
+
+  .section-title-text {
+    padding: 0.25em 0.325em 0.5em 0.325em;
+    margin: 0;
+  }
+</style>
