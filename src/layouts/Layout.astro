@@ -3,17 +3,11 @@ import { ViewTransitions } from 'astro:transitions';
 
 import Nav from "../components/layout/Nav.astro";
 
-interface Props {
-	title: string;
-	wrapperClass: string;
-}
-
 const {
 	title,
 	wrapperClass = null
 } = Astro.props;
 ---
-
 
 <!doctype html>
 <html lang="en">
