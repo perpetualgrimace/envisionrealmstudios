@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SectionTitle from '../components/layout/SectionTitle.astro';
-import Egg from '../components/Egg.astro';
+import EggItem from '../components/layout/EggItem.astro';
 
 const title = "Home";
 ---
@@ -10,7 +10,9 @@ const title = "Home";
 	<h1>{title}</h1>
 	<SectionTitle title="Our work" subtitle="A selection of examples that we can share publically"/>
 
-	<Egg file="people/daniel-gentry" />
+	<ul>
+		<EggItem file="people/daniel-gentry" title="Daniel Gentry" subtitle="cofounder" paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+	</ul>
 </Layout>
 
 <!-- <style is:global lang="scss">

@@ -1,0 +1,40 @@
+---
+import Egg from "../Egg.astro";
+
+const {
+  file = "missing-file-prop",
+  title = "missing `title` prop",
+  subtitle,
+  paragraph = "missing `text` prop"
+ } = Astro.props;
+---
+
+<li class="egg-item">
+  <Egg file={file} />
+  <span class="egg-item-caption">
+    <h3 class="egg-item-title u-heading u-mb-xs">
+      {title}
+    </h3>
+    {subtitle &&
+      <p class="egg-item-subtitle u-subhead u-font-xs u-mb-lg">
+        {subtitle}
+      </p>
+    }
+    <p class="egg-item-paragraph u-font-xs">
+      {paragraph}
+    </p>
+  </span>
+</li>
+
+<style is:global lang="scss">
+	@import '../../styles/global';
+
+  .egg-item {
+    display: flex;
+    align-items: center;
+
+    .egg {
+      margin-right: $sp-xxl;
+    }
+  }
+</style>
