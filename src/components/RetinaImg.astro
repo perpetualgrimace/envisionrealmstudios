@@ -1,0 +1,20 @@
+---
+const {
+  alt = "",
+  className = "retina-img",
+  extension = "png",
+  file = "missing-file-prop",
+  loading = "lazy"
+ } = Astro.props;
+---
+
+<img
+  class={className}
+  src={`/${file}.${extension}`}
+  srcset={`
+    /${file}.${extension} 1x,
+    /${file}@2x.${extension} 2x`}
+  alt={alt}
+  loading={loading}
+  draggable="false"
+/>
