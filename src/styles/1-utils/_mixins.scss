@@ -105,6 +105,10 @@
   font-size: $font-size-xxs;
   line-height: 1.5em;
 }
+@mixin font-xxxs {
+  font-size: $font-size-xxxs;
+  line-height: 1.5em;
+}
 
 //////////////////////////////////
 // EFFECTS
