@@ -31,17 +31,7 @@ const {
 
 		<main class="main" id="main">
 			<div class="content-wrapper" class={wrapperClass ? `${wrapperClass}-content-wrapper` : ''}>
-				<div class="section primary-content">
-					<slot />
-				</div>
-
-				<div class="section secondary-content">
-					<slot name="sidebar" />
-				</div>
-
-				<div class="section cta-content">
-					<slot name="cta" />
-				</div>
+				<slot />
 			</div>
 		</main>
 	</body>

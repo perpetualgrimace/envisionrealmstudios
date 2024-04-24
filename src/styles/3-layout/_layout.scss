@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+.content-wrapper {
+  padding: $sp-xl;
+}
+
 .wrapper > :first-child {
   z-index: 1;
 }
