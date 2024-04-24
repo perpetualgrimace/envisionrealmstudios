@@ -1,25 +1,30 @@
 ---
-const links = [
-	{title: "Home", href: "/"},
-	{title: "About", href: "/about"},
-	{title: "Careers", href: "/careers"},
-	{title: "Contact", href: "/contact"}
-];
+import RetinaImg from "../RetinaImg.astro";
+import NavLinks from "./NavLinks.astro";
 ---
 
 <nav class="nav">
-	<ul class="nav-list">
-		{links.map(link => (
-			<li class="nav-item">
-				<a class="nav-link" href={link.href}>{link.title}</a>
-			</li>
-		))}
-	</ul>
+	<a class="nav-logo" href="/">
+		<RetinaImg
+			className="nav-logo-img"
+			file="logo-horizontal"
+			alt="Envision Realm Studios (home)"
+		/>
+	</a>
+	<NavLinks />
 </nav>
 
 <style is:global lang="scss">
 	@import '../../styles/global';
-	.nav-link {
-		color: $brown;
+
+	.nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.nav-logo {
+		margin-right: $sp-lg;
 	}
 </style>
