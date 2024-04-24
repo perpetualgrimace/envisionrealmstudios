@@ -1,0 +1,19 @@
+---
+import RetinaImg from "../RetinaImg.astro";
+
+const {slug, props = {}} = Astro.props;
+const {title, headline, subhead, showButton} = props;
+---
+
+<div class="hero">
+  <h1>{headline || title}</h1>
+  <p>{subhead}</p>
+  {showButton &&
+    <a href="contact" class="button">Get started</a>
+  }
+  <RetinaImg className="hero-img" file={`hero/${slug}-hero`} extension="jpg" />
+</div>
+
+<style is:global lang="scss">
+	@import '../../styles/global';
+</style>

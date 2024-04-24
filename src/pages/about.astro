@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 
-const title = "About";
+const heroProps = {
+	headline: "Small team, big events",
+	subhead: "From navigating fire codes to understanding crowd patterns, we've been through it all. We guarantee a smooth experience when you work with us.",
+	showButton: true
+}
 ---
 
-<Layout title={title}>
-	<h1>{title}</h1>
+<Layout slug="about" title="About" heroProps={heroProps}>
 </Layout>
 
 <!-- <style is:global lang="scss">

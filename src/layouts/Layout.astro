@@ -2,11 +2,13 @@
 import { ViewTransitions } from 'astro:transitions';
 
 import Nav from "../components/layout/Nav.astro";
+import Hero from "../components/layout/Hero.astro";
 import Footer from "../components/layout/Footer.astro";
 
 const {
 	title,
-	wrapperClass = null
+	slug,
+	heroProps
 } = Astro.props;
 ---
 
@@ -28,9 +30,9 @@ const {
 
 	<body>
 		<Nav />
-
+		<Hero props={heroProps} slug={slug} />
 		<main class="main" id="main">
-			<div class="content-wrapper" class={wrapperClass ? `${wrapperClass}-content-wrapper` : ''}>
+			<div class={`content-wrapper ${slug}-content-wrapper`}>
 				<slot />
 			</div>
 		</main>

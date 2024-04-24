@@ -3,11 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import SectionTitle from '../components/layout/SectionTitle.astro';
 import EggItem from '../components/layout/EggItem.astro';
 
-const title = "Home";
+const heroProps = {
+	headline: "Event installations & asset fabrication",
+	subhead: "From small custom built assets to large scale themed installations, this is our realm.",
+	showButton: true
+}
 ---
 
-<Layout title={title}>
-	<h1>{title}</h1>
+<Layout slug="home" title="Home" heroProps={heroProps}>
 	<SectionTitle title="Our work" subtitle="A selection of examples that we can share publically"/>
 
 	<ul>
