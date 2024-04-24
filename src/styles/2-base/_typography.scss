@@ -52,3 +52,7 @@ p,
 li {
   @include font-sm;
 }
+
+a {
+  font-weight: $bold-weight;
+}

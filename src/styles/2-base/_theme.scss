@@ -5,6 +5,9 @@ html {
 
 a {
   color: $gold;
+  text-decoration-color: $brown;
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 0.25em;
   transition: color 0.2s ease-out;
 
   &:hover,
@@ -22,11 +25,6 @@ h5,
 h6,
 .u-heading {
   color: $gold;
-}
-
-a {
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.125em;
 }
 
 a:focus-visible,
