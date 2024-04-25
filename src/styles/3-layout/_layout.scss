@@ -5,7 +5,7 @@
 
 .content-wrapper {
   @include container;
-  padding: $sp-xl;
+  padding: $sp-xxl * 1.5 $sp-xl;
 }
 
 .wrapper > :first-child {
@@ -14,6 +14,7 @@
 
 .bullet-list {
   margin-bottom: $sp-xl * 1.5;
+
   li {
     padding-left: 1em;
     margin-bottom: 0.5em;

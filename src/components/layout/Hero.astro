@@ -27,6 +27,7 @@ const {title, headline, subhead, showButton} = props;
 
   .hero {
     @include container;
+    position: static;
   }
 
   .hero-img {
@@ -46,7 +47,7 @@ const {title, headline, subhead, showButton} = props;
   }
 
   .hero-caption {
-    padding: $sp-xl;
+    padding: $sp-xl $sp-xl 0 $sp-xl;
     width: 55rem;
     max-width: 100%;
     margin-top: -12rem;
@@ -55,5 +56,17 @@ const {title, headline, subhead, showButton} = props;
     > .button {
       margin-top: 2.25em;
     }
+  }
+
+  .hero:after {
+    @include pseudo;
+    height: $sp-xxl;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: $black;
+    border-radius: 0 0 50% 50%;
   }
 </style>

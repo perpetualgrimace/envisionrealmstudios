@@ -43,3 +43,7 @@ button:focus:not(:focus-visible),
   color: $white;
   background-color: rgba($gold, 0.6);
 }
+
+main {
+  background-color: $night;
+}
