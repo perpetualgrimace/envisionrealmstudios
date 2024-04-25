@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionTitle from '../components/layout/SectionTitle.astro';
+import EggItem from '../components/layout/EggItem.astro';
 
 const heroProps = {
 	headline: "Small team, big events",
@@ -9,6 +11,27 @@ const heroProps = {
 ---
 
 <Layout slug="about" title="About" heroProps={heroProps}>
+	<SectionTitle title="Our people" subtitle="Our leadership has 30 years combined experience in bringing consumer events to life. In Florida and beyond, we get it done."/>
+	<ul class="egg-list u-pb-xl">
+		<EggItem
+			title="Daniel Gentry"
+			file="people/daniel-gentry"
+			subtitle="Tampa, FL"
+			paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		/>
+		<EggItem
+			title="Bryan Martina"
+			file="people/bryan-martina"
+			subtitle="Tampa, FL"
+			paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		/>
+		<EggItem
+			title="Jesse Irish"
+			file="people/jesse-irish"
+			subtitle="Somewhere on Earth"
+			paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		/>
+	</ul>
 </Layout>
 
 <!-- <style is:global lang="scss">

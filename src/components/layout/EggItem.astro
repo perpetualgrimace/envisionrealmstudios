@@ -9,7 +9,7 @@ const {
  } = Astro.props;
 ---
 
-<li class="egg-item">
+<li class="egg-item u-mh-auto">
   <Egg file={file} />
   <span class="egg-item-caption">
     <h3 class="egg-item-title u-heading u-mb-xs">
@@ -32,9 +32,22 @@ const {
   .egg-item {
     display: flex;
     align-items: center;
+    width: 50rem;
+    max-width: 100%;
 
     .egg {
-      margin-right: $sp-xxl;
+      flex: 1 0.75 16rem;
+      margin-right: $sp-xl;
+      margin-left: -4rem;
+
+      @media (min-width: 666px) {
+        margin-left: 0;
+        margin-right: $sp-xl * 1.5;
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: $sp-xxl;
     }
   }
 </style>
