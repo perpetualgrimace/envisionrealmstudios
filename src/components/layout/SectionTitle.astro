@@ -5,25 +5,37 @@ const { title, subtitle } = Astro.props;
 ---
 
 <div class="section-title">
-  <span class="section-title-svg">
-    <Fragment set:html={wrench} />
-  </span>
-  <h2 class="section-title-text">
-    {title}
-  </h2>
-  <span class="section-title-svg">
-    <Fragment set:html={wrench} />
-  </span>
-</div>
+  <div class="section-title-title">
+    <span class="section-title-svg">
+      <Fragment set:html={wrench} />
+    </span>
+    <h2 class="section-title-text">
+      {title}
+    </h2>
+    <span class="section-title-svg">
+      <Fragment set:html={wrench} />
+    </span>
+  </div>
 
-{subtitle &&
-  <p class="section-title-subtitle u-text-c u-mh-auto u-mb-xxl">{subtitle}</p>
-}
+  {subtitle &&
+    <p class="section-title-subtitle u-text-c u-mh-auto u-mb-md">{subtitle}</p>
+  }
+
+  <slot />
+</div>
 
 <style is:global lang="scss">
 	@import '../../styles/main';
 
-	.section-title {
+  .section-title {
+    padding-bottom: $sp-xxl;
+
+    &:last-of-type {
+      padding-bottom: $sp-lg;
+    }
+  }
+
+	.section-title-title {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
