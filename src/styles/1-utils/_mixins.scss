@@ -44,6 +44,13 @@
   overflow: hidden;
 }
 
+@mixin container {
+  width: 1200px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 //////////////////////////////////
 // TYPOGRAPHY
 //////////////////////////////////
@@ -56,12 +63,12 @@
 
 @mixin title-text {
   font-family: $title-font;
-  font-size: $font-size-xl * 0.75;
+  font-size: calc(#{$font-size-md} + 5vw);
   font-weight: $title-weight;
-  line-height: 1.25;
+  line-height: 1.125;
   text-shadow: 0 2px 2rem $black;
 
-  @media (min-width: 600px) {
+  @media (min-width: 666px) {
     font-size: $font-size-xl;
   }
 }

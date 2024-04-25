@@ -4,7 +4,9 @@ const {
   className = "retina-img",
   extension = "png",
   file = "missing-file-prop",
-  loading = "lazy"
+  loading = "lazy",
+  width = null,
+  height = null
  } = Astro.props;
 ---
 
@@ -17,4 +19,6 @@ const {
   alt={alt}
   loading={loading}
   draggable="false"
+  width={width}
+  height={height}
 />
