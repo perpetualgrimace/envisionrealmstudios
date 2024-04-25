@@ -1,5 +1,6 @@
 ---
 import RetinaImg from "../RetinaImg.astro";
+import Button from "../Button.astro";
 
 const {slug, props = {}} = Astro.props;
 const {title, headline, subhead, showButton} = props;
@@ -14,7 +15,9 @@ const {title, headline, subhead, showButton} = props;
     <h1 class="hero-title u-mb-xl">{headline || title}</h1>
     <p class="hero-paragraph u-font-md">{subhead}</p>
     {showButton &&
-      <a href="contact" class="button">Get started</a>
+      <Button href="contact">
+        Get started
+      </Button>
     }
   </div>
 </div>
@@ -48,5 +51,9 @@ const {title, headline, subhead, showButton} = props;
     max-width: 100%;
     margin-top: -12rem;
     z-index: 1;
+
+    > .button {
+      margin-top: 2.25em;
+    }
   }
 </style>
