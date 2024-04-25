@@ -3,13 +3,27 @@ import Layout from '../layouts/Layout.astro';
 
 const heroProps = {
 	headline: "Work with us",
-	subhead: "We're always looking to add experienced professionals to our team! Whether you're creative, technical, or both, we'd love to hear from you."
+	subhead: "We’re always looking to add experienced professionals to our team! Whether you're creative, technical, or both, we’d love to hear from you."
 }
 ---
 
 <Layout slug="careers" title="Careers" heroProps={heroProps}>
+	<div class="careers-link-wrapper u-text-c">
+		<a
+			class="careers-link u-heading u-font-lg u-mb-xl"
+			href="mailto:careers@envisionrealmstudios.com"
+		>
+			careers@envisionrealmstudios.com
+		</a>
+	</div>
 </Layout>
 
-<!-- <style is:global lang="scss">
+<style is:global lang="scss">
 	@import '../styles/global';
-</style> -->
+
+	.careers-link {
+		display: inline-block;
+		width: auto;
+		padding: 1em;
+	}
+</style>
