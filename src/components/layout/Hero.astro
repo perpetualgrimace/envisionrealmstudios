@@ -7,8 +7,8 @@ const {title, headline, subhead, showButton} = props;
 ---
 
 <div class="hero">
-  <div class="hero-img-wrapper">
-    <RetinaImg className="hero-img u-mh-auto" file={`hero/${slug}-hero`} extension="jpg" width={1320} height={slug === "home" ? 760 : 600} />
+  <div class={`hero-img-wrapper ${slug}-hero-img-wrapper`}>
+    <RetinaImg className="hero-img u-mh-auto" file={`hero/${slug}-hero`} extension="jpg" />
   </div>
 
   <div class="hero-caption u-mh-auto u-text-l-c">
@@ -26,13 +26,20 @@ const {title, headline, subhead, showButton} = props;
 	@import '../../styles/global';
 
   .hero {
-    @include container;
     position: static;
   }
 
+  .hero-img-wrapper {
+    width: 100%;
+    height: calc(35vh + 20vw);
+  }
+  .home-hero-img-wrapper {
+    height: calc(50vh + 20vw);
+  }
+
   .hero-img {
-    height: auto;
-    aspect-ratio: attr(width) / attr(height);
+    @include absolute-expand;
+    object-fit: cover;
   }
 
   .hero-img-wrapper:after {
