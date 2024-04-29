@@ -1,6 +1,83 @@
 // prevent zoom in on mobile
 @media (max-width: 899px) {
-  input, textarea {
+  input,
+  textarea {
     font-size: 16px !important;
   }
+}
+
+label {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75em 0.875em 0.875em;
+  background-color: $black;
+  border: 1px solid $walnut;
+  font-size: $font-size-xs;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out,
+    color 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($black, 0.666);
+  }
+  &:hover {
+    border-color: $gold;
+  }
+  &:focus {
+    border-color: $white;
+  }
+}
+
+textarea {
+  min-height: 9rem;
+}
+
+.control {
+  padding-left: $sp-sm + $sp-xs;
+  user-select: none;
+}
+
+.control input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+}
+.control-indicator {
+  @include absolute-vertical-center;
+  left: 0;
+  margin-top: -1px;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: $black;
+  border: 1px solid $brown;
+  border-radius: $radius-md;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out,
+    color 0.2s ease-out;
+}
+
+/* Hover state */
+.control:hover .control-indicator {
+  background-color: rgba($brown, 0.333);
+}
+
+/* Focus */
+.control input[type="checkbox"]:focus ~ .control-indicator {
+  border-color: $white;
+}
+
+/* Checked state */
+.control input[type="checkbox"]:checked ~ .control-indicator:after {
+  @include absolute-center;
+  content: "✓";
+  display: block;
+  font-size: 0.75em;
+  margin-top: 1px;
 }
