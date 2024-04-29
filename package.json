@@ -12,5 +12,8 @@
   "dependencies": {
     "astro": "^4.6.3",
     "sass": "1.32.13"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
   }
 }
