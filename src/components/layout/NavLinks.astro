@@ -3,9 +3,9 @@ const currPath = Astro.url.pathname;
 
 const links = [
 	{title: "Home", href: "/"},
-	{title: "About", href: "/about", a11y: "Envision Realm Studios"},
-	{title: "Careers", href: "/careers"},
-	{title: "Contact us", href: "/contact"}
+	{title: "About", href: "/about/", a11y: "Envision Realm Studios"},
+	{title: "Careers", href: "/careers/"},
+	{title: "Contact us", href: "/contact/"}
 ];
 ---
 
@@ -51,7 +51,3 @@ const links = [
 		}
 	}
 </style>
-
-<script define:vars={{currPath}}>
-	console.log(currPath);
-</script>
