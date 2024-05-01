@@ -45,12 +45,12 @@ const budgetRanges = [
 			class="contact-input"
 			type="hidden"
 			name="form-name"
-			value="mountainsize"
+			value="realmproject"
 		/>
 
 		<div class="u-mb-lg contact-field-services">
 			<p class="u-subhead u-font-xs u-mb-0">Services requested</p>
-			<p class="help u-cyan-light-color u-font-xxxs u-mb-sm">
+			<p class="help u-cyan-light-color u-font-xxxs u-mb-lg">
 				Please select any that apply
 			</p>
 
@@ -95,7 +95,7 @@ const budgetRanges = [
 			</div>
 
 			<div class="contact-group-date u-mb-sm">
-				<label class="u-mb-lg contact-field-email">
+				<label class="contact-field-month">
 					<div class="u-subhead u-mb-xxs">
 						Proposed opening date <span class="u-visually-hidden"> (please select month)</span>
 					</div>
@@ -106,7 +106,7 @@ const budgetRanges = [
 					</select>
 				</label>
 
-				<label>
+				<label class="contact-field-year u-mb-lg">
 					<div class="u-visually-hidden">Proposed opening year</div>
 					<input
 						name="opening-year"
@@ -157,6 +157,75 @@ const budgetRanges = [
 	</form>
 </Layout>
 
-<!-- <style is:global lang="scss">
+<style is:global lang="scss">
 	@import '../styles/global';
-</style> -->
+
+	.contact-field-services-checkboxes {
+		& > .control {
+			margin-bottom: 1.375em;
+		}
+
+		@media (max-width: 799px) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		@media (min-width: 440px) and (max-width: 665px) {
+			& > .control {
+				margin-right: $sp-lg;
+				flex: 1 0 calc(50% - #{$sp-lg * 2});
+			}
+		}
+		@media (min-width: 666px) and (max-width: 799px) {
+			& > .control {
+				margin-right: $sp-lg;
+				flex: 1 0 calc(33.3% - #{$sp-lg * 2});
+			}
+		}
+	}
+
+	.contact-form input,
+	.contact-form select {
+		height: 3.25rem;
+	}
+
+	@media (min-width: 480px) {
+		.contact-group-halfsies {
+			display: flex;
+
+			& > * {
+				flex: 1 1 50%;
+				padding-left: $sp-md;
+				padding-right: $sp-md;
+
+				&:first-child {
+					margin-left: -$sp-md;
+				}
+				&:last-child {
+					margin-right: -$sp-md;
+				}
+			}
+		}
+
+		.contact-field-month {
+			width: calc(100% - 9rem + 1px);
+			margin-bottom: $sp-lg;
+		}
+		.contact-field-year {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 9rem;
+			margin-bottom: 0 !important; // override utility class
+		}
+	}
+
+	@media (min-width: 800px) {
+		.contact-form {
+			display: flex;
+			justify-content: space-between;
+		}
+		.contact-inputs {
+			width: calc(100% - 19rem);
+		}
+	}
+</style>

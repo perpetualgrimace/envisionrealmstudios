@@ -40,7 +40,7 @@ textarea {
 }
 
 .control {
-  padding-left: $sp-sm + $sp-xs;
+  padding-left: $sp-lg;
   user-select: none;
 }
 
@@ -52,10 +52,10 @@ textarea {
 .control-indicator {
   @include absolute-vertical-center;
   left: 0;
-  margin-top: -1px;
   display: block;
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 1px;
   background-color: $black;
   border: 1px solid $brown;
   border-radius: $radius-md;
@@ -65,19 +65,29 @@ textarea {
 
 /* Hover state */
 .control:hover .control-indicator {
-  background-color: rgba($brown, 0.333);
+  background-color: $brown;
+}
+
+/* Checked state */
+.control input[type="checkbox"]:checked ~ .control-indicator {
+  border-color: $gold;
+  background-color: $gold;
+
+  &:after {
+    @include absolute-center;
+    content: "✓";
+    display: block;
+    font-size: 0.75em;
+    margin-top: 1px;
+    color: $black;
+  }
+
+  &:hover {
+    background-color: lighten($gold, 12.5%);
+  }
 }
 
 /* Focus */
 .control input[type="checkbox"]:focus ~ .control-indicator {
-  border-color: $white;
-}
-
-/* Checked state */
-.control input[type="checkbox"]:checked ~ .control-indicator:after {
-  @include absolute-center;
-  content: "✓";
-  display: block;
-  font-size: 0.75em;
-  margin-top: 1px;
+  border-color: rgba($white, 0.875);
 }
