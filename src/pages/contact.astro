@@ -104,6 +104,7 @@ const budgetRanges = [
 							<option value={month}>{month}</option>
 						))}
 					</select>
+					<div class="select-indicator" />
 				</label>
 
 				<label class="contact-field-year u-mb-lg">
@@ -129,6 +130,7 @@ const budgetRanges = [
 							<option value={budget.value}>{budget.label}</option>
 						))}
 					</select>
+					<div class="select-indicator" />
 				</label>
 
 				<label class="u-mb-lg contact-field-theme">
@@ -203,6 +205,10 @@ const budgetRanges = [
 				&:last-child {
 					margin-right: -$sp-md;
 				}
+			}
+
+			.select-indicator {
+				right: 2em;
 			}
 		}
 
