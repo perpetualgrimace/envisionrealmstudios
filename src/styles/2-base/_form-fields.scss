@@ -35,6 +35,10 @@ textarea {
   }
 }
 
+input[type="number"] {
+  appearance: textfield;
+}
+
 textarea {
   min-height: 9rem;
 }
