@@ -1,9 +1,13 @@
 ---
+import { getCollection } from 'astro:content';
+const projects = await getCollection('projects');
+
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/layout/CTA.astro';
 import LogoSection from '../components/layout/LogoSection.astro';
 import SectionTitle from '../components/layout/SectionTitle.astro';
 import EggItem from '../components/layout/EggItem.astro';
+import Button from '../components/Button.astro';
 
 const heroProps = {
 	headline: "Event installations & asset fabrication",
@@ -16,19 +20,17 @@ const heroProps = {
 	<SectionTitle title="Our work" subtitle="A selection of examples that we can share publically"/>
 
 	<ul class="egg-list u-pb-xl">
-		<EggItem
-			title="St. Pete Opera set"
-			file="projects/st-pete-opera"
-			subtitle="St. Petersburg, FL • 2024 (in progress)"
-			paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-		/>
-		<EggItem
-			title="Howl-O-Scream Busch Gardens mausoleum"
-			file="projects/howl-o-scream-mausoleum"
-			subtitle="Tampa, FL • 2023"
-			paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-		/>
+		{projects.map((project, i) => i < 4 && (
+			<EggItem
+				link={project.slug}
+				title={project.data.title}
+				file={`projects/${project.slug}/${project.data.video ? "video" : "1"}`}
+				subtitle={`${project.data.year} • ${project.data.location}`}
+			/>
+		))}
 	</ul>
+
+	<p><Button href="/projects/">More projects</Button></p>
 
 	<LogoSection />
 

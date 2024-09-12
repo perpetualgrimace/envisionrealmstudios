@@ -3,12 +3,12 @@ import RetinaImg from "../RetinaImg.astro";
 import Button from "../Button.astro";
 
 const {slug, props = {}} = Astro.props;
-const {title, headline, subhead, showButton} = props;
+const {title, headline, subhead, showButton, useDefaultImg} = props;
 ---
 
 <div class="hero">
   <div class={`hero-img-wrapper ${slug}-hero-img-wrapper`}>
-    <RetinaImg className="hero-img u-mh-auto" file={`hero/${slug}-hero`} extension="jpg" />
+    <RetinaImg className="hero-img u-mh-auto" file={`hero/${useDefaultImg  ? "default" : slug}-hero`} extension="jpg" />
   </div>
 
   <div class="hero-caption u-mh-auto u-text-l-c">

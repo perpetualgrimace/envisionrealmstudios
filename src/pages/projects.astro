@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+const projects = await getCollection('projects');
+
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/layout/CTA.astro';
+import EggItem from "../components/layout/EggItem.astro";
+
+const heroProps = {
+	headline: "Our work",
+	subhead: "A selection of examples that we can share publically",
+	useDefaultImg: true
+}
+---
+
+<Layout slug="projects" title="Our projects" heroProps={heroProps}>
+	<ul class="projects-grid">
+		{projects.map(project => (
+			<li class="project-item">
+				<EggItem
+					link={project.slug}
+					title={project.data.title}
+					file={`projects/${project.slug}/${project.data.video ? "video" : "1"}`}
+					subtitle={`${project.data.year} • ${project.data.location}`}
+				/>
+			</li>
+		))}
+	</ul>
+	<CTA title="Let’s lol together"/>
+</Layout>
+
+<style is:global lang="scss">
+	@import '../styles/global';
+
+	.projects-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 0 $sp-lg $sp-xl $sp-lg;
+		top: -$sp-sm;
+
+		.projects-item {
+			flex: 1 0 16rem;
+			margin: $sp-xs;
+			max-width: calc(100% - #{$sp-md});
+		}
+	}
+
+</style>

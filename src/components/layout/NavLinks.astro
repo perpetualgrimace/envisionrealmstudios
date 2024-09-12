@@ -2,11 +2,15 @@
 const currPath = Astro.url.pathname;
 
 const links = [
-	{title: "Home", href: "/"},
+	{title: "Projects", href: "/projects/"},
 	{title: "About", href: "/about/", a11y: "Envision Realm Studios"},
 	{title: "Careers", href: "/careers/"},
 	{title: "Contact us", href: "/contact/"}
 ];
+
+function getPage(url) {
+	return url.split("/")[1];
+}
 ---
 
 <ul class="nav-links">
@@ -15,7 +19,7 @@ const links = [
       <a
         class="nav-link u-heading u-font-xxs"
         href={link.href}
-        aria-current={currPath === link.href ? "page" : null}
+        aria-current={getPage(currPath) === getPage(link.href) ? "page" : null}
       >
         {link.title}{link.a11y &&
           <span class="u-visually-hidden"> {link.a11y}</span>

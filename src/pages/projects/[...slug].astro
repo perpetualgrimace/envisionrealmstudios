@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection('projects');
+  const workCount = projectEntries.length;
+
+  return projectEntries.map((project, i) => ({
+    params: { slug: project.slug },
+    props: {
+      project,
+      prevProject: i === 0
+        ? projectEntries[[workCount - 1]]
+        : projectEntries[i - 1],
+      nextProject: i === workCount - 1
+          ? projectEntries[0]
+          : projectEntries[i + 1]
+    },
+  }));
+}
+
+const { project, prevProject, nextProject } = Astro.props;
+const { slug } = project;
+const { title, location, year, images } = project.data;
+const { Content } = await project.render();
+
+const heroProps = {
+  headline: title,
+  textOnly: true
+}
+---
+
+<Layout slug={slug} title={title} heroProps={heroProps}>
+  <section class="project">
+    <div class="project-description">
+      <p class="project-meta u-mb-lg">
+        <span class="project-meta-location">{location}</span>
+        •
+        <span class="project-meta-year">{year}</span>
+      </p>
+
+      <div class="project-description-content">
+        <Content />
+      </div>
+
+      <h2 class="project-more-heading">More work</h2>
+
+      <!-- <ProjectNav
+        prevSlug={prevProject.slug}
+        prevTitle={prevProject.data.title}
+        nextSlug={nextProject.slug}
+        nextTitle={nextProject.data.title}
+      /> -->
+    </div>
+
+    <!-- <ProjectGallery images={images} slug={slug}  /> -->
+  </section>
+</Layout>
+
+<style is:global lang="scss">
+	@import '../../styles/global';
+
+
+</style>

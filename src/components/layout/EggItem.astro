@@ -5,24 +5,30 @@ const {
   file = "missing-file-prop",
   title = "missing `title` prop",
   subtitle,
-  paragraph = "missing `text` prop"
+  paragraph,
+  link
  } = Astro.props;
 ---
 
 <li class="egg-item u-mh-auto">
+  {link &&
+    <a class="egg-cover-link" href={`/projects/${link}/`} aria-labelled-by={link} />
+  }
   <Egg file={file} />
   <span class="egg-item-caption">
-    <h3 class="egg-item-title u-heading u-mb-xs">
+    <h3 class="egg-item-title u-heading u-mb-xs" id={link}>
       {title}
     </h3>
     {subtitle &&
-      <p class="egg-item-subtitle u-subhead u-font-xs u-mb-lg">
+      <p class="egg-item-subtitle u-subhead u-font-xs">
         {subtitle}
       </p>
     }
-    <p class="egg-item-paragraph u-font-xs">
-      {paragraph}
-    </p>
+    {paragraph &&
+      <p class="egg-item-paragraph u-font-xs">
+        {paragraph}
+      </p>
+    }
   </span>
 </li>
 
@@ -36,7 +42,7 @@ const {
     max-width: 100%;
 
     .egg {
-      flex: 1 0.75 16rem;
+      flex: 0 0 8rem;
       margin-right: $sp-xl;
       margin-left: -4rem;
 
@@ -48,6 +54,31 @@ const {
 
     &:not(:last-of-type) {
       margin-bottom: $sp-xxl;
+    }
+  }
+  .egg-item-caption > .egg-item-subtitle:not(:last-child) {
+    margin-bottom: $sp-lg;
+  }
+
+  .egg-item-title {
+    transition: 0.3s color ease-out;
+  }
+
+  .egg-cover-link {
+    @include absolute-expand;
+    z-index: 1;
+
+    &:hover, &:focus {
+      & ~ .egg {
+        box-shadow: 0 0 3rem $gold;
+
+        & > .egg-img {
+          transform: scale(1.25);
+        }
+      }
+      & ~ .egg-item-caption > .egg-item-title {
+        color: $white;
+      }
     }
   }
 </style>
