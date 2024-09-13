@@ -1,0 +1,21 @@
+---
+const { images, slug } = Astro.props;
+
+import RetinaImg from "./RetinaImg.astro";
+---
+
+<div class="project-gallery">
+  {images &&
+    <ul class="project-gallery-list u-mb-md">
+      {images.map((img, i) => (
+        <li class="project-gallery-item" data-index={i} style={i !== 0 ? "display: none;" : ""}>
+          <RetinaImg className="project-gallery" file={`projects/${slug}/${img}`} extension="jpg" alt={`Project image #${i + 1}`} />
+        </li>
+      ))}
+    </ul>
+  }
+</div>
+
+<style is:global lang="scss">
+	@import '../styles/global';
+</style>
