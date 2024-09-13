@@ -1,15 +1,26 @@
 ---
-const { images, slug } = Astro.props;
-
 import RetinaImg from "./RetinaImg.astro";
+import Video from "./Video.astro";
+
+const { images, slug, video } = Astro.props;
 ---
 
 <div class="project-gallery">
   {images &&
     <ul class="project-gallery-list u-mb-md">
+      {video &&
+        <li className="project-gallery-item">
+          <Video path={`projects/${slug}`} />
+        </li>
+      }
       {images.map((img, i) => (
-        <li class="project-gallery-item" data-index={i} style={i !== 0 ? "display: none;" : ""}>
-          <RetinaImg className="project-gallery" file={`projects/${slug}/${img}`} extension="jpg" alt={`Project image #${i + 1}`} />
+        <li class="project-gallery-item">
+          <RetinaImg
+            className="project-gallery"
+            file={`projects/${slug}/${img}`}
+            extension="jpg"
+            alt={`Project image #${i + 1}`}
+          />
         </li>
       ))}
     </ul>

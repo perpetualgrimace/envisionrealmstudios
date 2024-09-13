@@ -1,0 +1,18 @@
+---
+const {
+  className = "video",
+  path = "missing-path-prop",
+ } = Astro.props;
+---
+
+<video
+  class={className}
+  autoplay
+  loop
+  muted
+  preload="auto"
+  poster={`/${path}/video.jpg`}
+>
+  <source src={`/${path}/video.mp4`} type="video/mp4" />
+  <img src={`/${path}/video.jpg`} title="Your browser does not support the <video> tag" loading="lazy">
+</video>
