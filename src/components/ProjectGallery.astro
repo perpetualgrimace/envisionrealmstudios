@@ -3,11 +3,13 @@ import RetinaImg from "./RetinaImg.astro";
 import Video from "./Video.astro";
 
 const { images, slug, video } = Astro.props;
+let itemCount = images.length + video;
+
 ---
 
 <div class="project-gallery u-mb-xl u-text-l-c">
   {images &&
-    <ul class="project-gallery-list u-mb-md">
+    <ul class={`project-gallery-list u-mb-md items-${itemCount % 2 == 0 ? "even" : "odd"}`}>
       {video &&
         <li class="project-gallery-item">
           <Video path={`projects/${slug}`} />
@@ -30,7 +32,33 @@ const { images, slug, video } = Astro.props;
 <style is:global lang="scss">
 	@import '../styles/global';
 
-  .project-gallery-item > * {
-    width: 100%;
+  .project-gallery-item {
+    margin-bottom: $sp-xs;
+    background-color: $black;
+
+    & > * {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  @media (min-width: 460px) {
+    .project-gallery-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .project-gallery-item:first-child {
+        flex: 1 0 100%;
+      }
+
+      .project-gallery-item:not(:first-child) {
+        width: calc(50% - #{$sp-xxs});
+      }
+
+      &.items-even .project-gallery-item:last-of-type {
+        width: 100%;
+      }
+    }
   }
 </style>

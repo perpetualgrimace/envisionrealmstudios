@@ -6,14 +6,18 @@ const {prevSlug, prevTitle, nextSlug, nextTitle} = Astro.props;
   <h2 class="project-more-heading u-font-md">More projects</h2>
 
   <nav class="project-nav u-mb-lg u-font-xs">
-    <a class="project-nav-link" href={`/projects/${prevSlug}`}>&larr; Previous project</a>
+    <a class="project-nav-link" href={`/projects/${prevSlug}`}>&larr; Prev<span class="u-visually-hidden">ious project</span></a>
     <a class="project-nav-link" href="/projects/">All projects</a>
-    <a class="project-nav-link" href={`/projects/${nextSlug}`}>Next project &rarr;</a>
+    <a class="project-nav-link" href={`/projects/${nextSlug}`}>Next <span class="u-visually-hidden">project</span> &rarr;</a>
   </nav>
 </div>
 
 <style is:global lang="scss">
 	@import '../styles/global';
+
+  .project-nav-wrapper {
+    text-align: center;
+  }
 
   .project-nav-link {
     display: inline-block;

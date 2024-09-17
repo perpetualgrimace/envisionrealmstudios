@@ -35,7 +35,7 @@ const heroProps = {
 
 <Layout slug="project" title={title} heroProps={heroProps}>
   <div class="project-hero">
-    <h1 class="project-title u-font-lg">{title}</h1>
+    <h1 class="project-title u-font-lg u-mb-xs">{title}</h1>
 
     <div class="project-description u-mb-xl">
       <p class="project-meta u-mb-lg">
@@ -63,6 +63,10 @@ const heroProps = {
 
 <style is:global lang="scss">
 	@import '../../styles/global';
+
+  .project-title {
+    line-height: 1;
+  }
 
   .project-content-wrapper {
     padding-top: $sp-lg;
