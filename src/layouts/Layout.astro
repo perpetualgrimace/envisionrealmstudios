@@ -28,7 +28,9 @@ const {
 
 	<body>
 		<Nav />
-		<Hero props={heroProps} slug={slug} />
+		{!heroProps.customHero &&
+			<Hero props={heroProps} slug={slug} />
+		}
 		<main class="main" id="main">
 			<div class={`content-wrapper ${slug}-content-wrapper`}>
 				<slot />

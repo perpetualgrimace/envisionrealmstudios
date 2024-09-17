@@ -5,11 +5,11 @@ import Video from "./Video.astro";
 const { images, slug, video } = Astro.props;
 ---
 
-<div class="project-gallery">
+<div class="project-gallery u-mb-xl u-text-l-c">
   {images &&
     <ul class="project-gallery-list u-mb-md">
       {video &&
-        <li className="project-gallery-item">
+        <li class="project-gallery-item">
           <Video path={`projects/${slug}`} />
         </li>
       }
@@ -29,4 +29,8 @@ const { images, slug, video } = Astro.props;
 
 <style is:global lang="scss">
 	@import '../styles/global';
+
+  .project-gallery-item > * {
+    width: 100%;
+  }
 </style>

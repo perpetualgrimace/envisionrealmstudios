@@ -29,40 +29,42 @@ const { title, location, year, images, video } = project.data;
 const { Content } = await project.render();
 
 const heroProps = {
-  headline: title,
-  textOnly: true
+  customHero: true
 }
 ---
 
-<Layout slug={slug} title={title} heroProps={heroProps}>
-  <section class="project">
-    <div class="project-description">
+<Layout slug="project" title={title} heroProps={heroProps}>
+  <div class="project-hero">
+    <h1 class="project-title u-font-lg">{title}</h1>
+
+    <div class="project-description u-mb-xl">
       <p class="project-meta u-mb-lg">
         <span class="project-meta-location">{location}</span>
         •
         <span class="project-meta-year">{year}</span>
       </p>
+  </div>
 
-      <div class="project-description-content">
-        <Content />
-      </div>
+  <section class="project">
+    <ProjectGallery images={images} slug={slug} video={video} />
 
-      <h2 class="project-more-heading">More project</h2>
-
-      <ProjectNav
-        prevSlug={prevProject.slug}
-        prevTitle={prevProject.data.title}
-        nextSlug={nextProject.slug}
-        nextTitle={nextProject.data.title}
-      />
+    <div class="project-description-content">
+      <Content />
     </div>
 
-    <ProjectGallery images={images} slug={slug} video={video} />
+    <ProjectNav
+      prevSlug={prevProject.slug}
+      prevTitle={prevProject.data.title}
+      nextSlug={nextProject.slug}
+      nextTitle={nextProject.data.title}
+    />
   </section>
 </Layout>
 
 <style is:global lang="scss">
 	@import '../../styles/global';
 
-
+  .project-content-wrapper {
+    padding-top: $sp-lg;
+  }
 </style>

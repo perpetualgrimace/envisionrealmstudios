@@ -2,41 +2,24 @@
 const {prevSlug, prevTitle, nextSlug, nextTitle} = Astro.props;
 ---
 
-<nav class="project-nav u-mb-lg u-font-sm">
-  <a class="project-nav-link" href={`/projects/${prevSlug}`}>&larr; Previous project</a>
-  <a class="project-nav-link" href="/projects/">All projects</a>
-  <a class="project-nav-link" href={`/projects/${nextSlug}`}>Next project &rarr;</a>
-</nav>
+<div class="project-nav-wrapper">
+  <h2 class="project-more-heading u-font-md">More projects</h2>
+
+  <nav class="project-nav u-mb-lg u-font-xs">
+    <a class="project-nav-link" href={`/projects/${prevSlug}`}>&larr; Previous project</a>
+    <a class="project-nav-link" href="/projects/">All projects</a>
+    <a class="project-nav-link" href={`/projects/${nextSlug}`}>Next project &rarr;</a>
+  </nav>
+</div>
 
 <style is:global lang="scss">
 	@import '../styles/global';
 
-  .project-nav {
-    width: 100%;
+  .project-nav-link {
+    display: inline-block;
 
-    @media (min-width: 700px) {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  @media (max-width: 699px) {
-    .project-nav-link {
-      display: inline-block;
-      text-decoration: none;
-      padding: 0.5em 1.125em 0.625em 1.125em;
-      color: $black;
-      border-radius: $radius-sm;
-      transition: 0.2s ease-out background-color;
-
-      &:not(:last-child) {
-        margin-bottom: $sp-xxs;
-      }
-
-      &:hover, &:focus {
-        color: $black;
-        background: $white;
-      }
+    &:not(:last-child) {
+      margin-right: $sp-lg;
     }
   }
 </style>
