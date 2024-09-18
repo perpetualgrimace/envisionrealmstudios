@@ -1,0 +1,42 @@
+---
+const {Icon, subtitle, title} = Astro.props;
+---
+
+<li class="service-tile u-text-c">
+  <Icon />
+  <h3 class="service-title u-font-sm u-mb-xxs">
+    {title}
+  </h3>
+  <p class="service-subtitle u-font-xxs">{subtitle}</p>
+</li>
+
+<style is:global lang="scss">
+	@import '../../styles/main';
+
+  .service-tile {
+    padding: $sp-xxl $sp-md;
+    border-bottom: $sp-sm solid $night;
+
+    & > svg {
+      width: 2.75rem;
+      height: 4rem;
+      margin-bottom: $sp-xs;
+    }
+
+    @media (min-width: 450px) {
+      flex: 1 0 50%;
+      width: 50%;
+      border: $sp-xs solid $night;
+    }
+
+    @media (min-width: 666px) {
+      flex: 1 0 33.333%;
+      width: 33.333%;
+    }
+
+    @media (min-width: 900px) {
+      border-width: $sp-sm;
+    }
+  }
+
+</style>

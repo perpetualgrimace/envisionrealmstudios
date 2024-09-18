@@ -1,0 +1,77 @@
+---
+import RetinaImg from "../RetinaImg.astro";
+import ServiceTile from "./ServiceTile.astro";
+
+import AssetFabrication from "../icons/AssetFabrication.svg.astro";
+import ConceptualDirection from "../icons/ConceptualDirection.svg.astro";
+import CrewAssistance from "../icons/CrewAssistance.svg.astro";
+import ProjectManager from "../icons/ProjectManager.svg.astro";
+import TechnicalDirection from "../icons/TechnicalDirection.svg.astro";
+import TurnkeyEvent from "../icons/TurnkeyEvent.svg.astro";
+---
+
+<div class="services-grid">
+  <div class="services-inner">
+    <ul class="services-list">
+      <ServiceTile
+        title="Turnkey Event"
+        Icon={TurnkeyEvent}
+        subtitle="Events from start to finish"
+      />
+      <ServiceTile
+        title="Crew Assistance"
+        Icon={CrewAssistance}
+        subtitle="More hands make less work"
+      />
+      <ServiceTile
+        title="Project Manager"
+        Icon={ProjectManager}
+        subtitle="Stay on track and on time"
+      />
+      <ServiceTile
+        title="Conceptual Direction"
+        Icon={ConceptualDirection}
+        subtitle="Big idea development"
+      />
+      <ServiceTile
+        title="Technical Direction"
+        Icon={TechnicalDirection}
+        subtitle="Bring the vision to life"
+      />
+      <ServiceTile
+        title="Asset Fabrication"
+        Icon={AssetFabrication}
+        subtitle="Construct the ream"
+      />
+    </ul>
+
+    <RetinaImg className="services-bg" file="services/services-bg" extension="jpg" />
+  </div>
+</div>
+
+<style is:global lang="scss">
+	@import '../../styles/main';
+
+  .services-list {
+    @media (min-width: 450px) {
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(100% + #{$sp-xs * 2});
+      left: -$sp-xs;
+    }
+    @media (min-width: 900px) {
+      width: calc(100% + #{$sp-sm * 2});
+      left: -$sp-sm;
+    }
+  }
+
+  .services-bg {
+    @include absolute-expand;
+    object-fit: cover;
+    background-color: $black;
+  }
+
+  .service-tile {
+    z-index: 1;
+  }
+</style>

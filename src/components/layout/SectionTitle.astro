@@ -1,5 +1,5 @@
 ---
-import wrench from "../icons/wrench.svg?raw";
+import Wrench from "../icons/Wrench.svg.astro";
 
 const { title, subtitle } = Astro.props;
 ---
@@ -7,13 +7,13 @@ const { title, subtitle } = Astro.props;
 <div class="section-title">
   <div class="section-title-title">
     <span class="section-title-svg">
-      <Fragment set:html={wrench} />
+      <Wrench />
     </span>
     <h2 class="section-title-text">
       {title}
     </h2>
     <span class="section-title-svg">
-      <Fragment set:html={wrench} />
+      <Wrench />
     </span>
   </div>
 
@@ -53,7 +53,7 @@ const { title, subtitle } = Astro.props;
   }
 
   .section-title-subtitle {
-    width: 50rem;
+    width: 44rem;
     max-width: 100%;
   }
 </style>

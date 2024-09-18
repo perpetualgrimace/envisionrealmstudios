@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import CTA from '../components/layout/CTA.astro';
 import SectionTitle from '../components/layout/SectionTitle.astro';
 import EggItem from '../components/layout/EggItem.astro';
+import ServicesGrid from '../components/layout/ServicesGrid.astro';
 
 const heroProps = {
 	headline: "Small team, big events",
@@ -12,6 +13,9 @@ const heroProps = {
 ---
 
 <Layout slug="about" title="About" heroProps={heroProps}>
+	<SectionTitle title="Our Services" subtitle="From planning to installation, and everything in between,  we've done it all. Whatever you need, we’re here to help." />
+	<ServicesGrid />
+
 	<SectionTitle title="Our people" subtitle="Our leadership has 30 years combined experience in bringing consumer events to life. In Florida and beyond, we get it done."/>
 	<ul class="egg-list u-pb-xl">
 		<EggItem
