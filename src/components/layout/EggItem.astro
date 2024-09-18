@@ -5,7 +5,6 @@ const {
   file = "missing-file-prop",
   title = "missing `title` prop",
   subtitle,
-  paragraph,
   link
  } = Astro.props;
 ---
@@ -24,11 +23,9 @@ const {
         {subtitle}
       </p>
     }
-    {paragraph &&
-      <p class="egg-item-paragraph u-font-xs">
-        {paragraph}
-      </p>
-    }
+    <div class="egg-item-paragraph u-font-xs">
+      <slot />
+    </div>
   </span>
 </li>
 
@@ -38,13 +35,17 @@ const {
   .egg-item {
     display: flex;
     align-items: center;
-    width: 50rem;
-    max-width: 100%;
+    width: 36rem;
+    max-width: calc(100% - #{$sp-xxl});
+
+    @media (min-width: 666px) {
+      max-width: 100%;
+    }
 
     .egg {
       flex: 0 0 7rem;
       margin-right: $sp-xl;
-      margin-left: -4rem;
+      margin-left: -2rem;
 
       @media (min-width: 666px) {
         margin-left: 0;
@@ -57,7 +58,7 @@ const {
     }
   }
   .egg-item-caption > .egg-item-subtitle:not(:last-child) {
-    margin-bottom: $sp-lg;
+    margin-bottom: $sp-sm;
   }
 
   .egg-item-title {
@@ -79,6 +80,14 @@ const {
       & ~ .egg-item-caption > .egg-item-title {
         color: $white;
       }
+    }
+  }
+
+  .egg-item-paragraph > * {
+    @include font-xxs;
+
+    &:not(:last-child) {
+      margin-bottom: 1em;
     }
   }
 </style>

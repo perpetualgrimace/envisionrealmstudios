@@ -3,7 +3,7 @@ import SectionTitle from './SectionTitle.astro';
 import RetinaImg from '../RetinaImg.astro';
 ---
 
-<section class="logo-section">
+<section class="logo-section middle-section">
   <SectionTitle title="Our clients" subtitle="We’re trusted with jobs of all sizes by companies of all sizes" />
 
   <RetinaImg
@@ -15,43 +15,6 @@ import RetinaImg from '../RetinaImg.astro';
 
 <style is:global lang="scss">
 	@import '../../styles/global';
-
-  .logo-section {
-    background: $black;
-    padding-bottom: $sp-md;
-    margin-top: $sp-xxl * 1.5;
-    margin-bottom: $sp-xxl * 1.625;
-
-    &[class] {
-      width: 100%;
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    &:before,
-    &:after {
-      @include pseudo;
-      height: $sp-xxl;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      z-index: 1;
-      background: $black;
-    }
-    &:before {
-      top: -$sp-xxl;
-      border-radius: 50% 50% 0 0;
-    }
-    &:after {
-      top: 100%;
-      border-radius: 0 0 50% 50%;
-    }
-
-    .section-title {
-      margin-bottom: $sp-md;
-    }
-  }
 
   .logo-section-img {
     max-width: 80%;

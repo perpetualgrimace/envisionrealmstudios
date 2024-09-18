@@ -63,6 +63,43 @@ const {
 		z-index: 1;
 	}
 
+	.middle-section {
+		background: $black;
+    padding-bottom: $sp-md;
+    margin-top: $sp-xxl * 1.5;
+    margin-bottom: $sp-xxl * 1.625;
+
+    &[class] {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &:before,
+    &:after {
+      @include pseudo;
+      height: $sp-xxl;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background: $black;
+    }
+    &:before {
+      top: -$sp-xxl;
+      border-radius: 50% 50% 0 0;
+    }
+    &:after {
+      top: 100%;
+      border-radius: 0 0 50% 50%;
+    }
+
+    .section-title {
+      margin-bottom: $sp-md;
+    }
+	}
+
 	.bullet-list {
 		margin-bottom: $sp-xl * 1.5;
 

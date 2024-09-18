@@ -17,20 +17,22 @@ const heroProps = {
 ---
 
 <Layout slug="home" title="Home" heroProps={heroProps}>
-	<SectionTitle title="Our work" subtitle="A selection of examples that we can share publically"/>
+	<section class="home-projects">
+		<SectionTitle title="Our work" subtitle="A selection of examples that we can share publically"/>
 
-	<ul class="egg-list u-pb-xl">
-		{projects.map((project, i) => i < 4 && (
-			<EggItem
-				link={project.slug}
-				title={project.data.title}
-				file={`projects/${project.slug}/${project.data.video ? "video" : "1"}`}
-				subtitle={`${project.data.year} • ${project.data.location}`}
-			/>
-		))}
-	</ul>
+		<ul class="egg-list u-pb-xl">
+			{projects.map((project, i) => i < 4 && (
+				<EggItem
+					link={project.slug}
+					title={project.data.title}
+					file={`projects/${project.slug}/${project.data.video ? "video" : "1"}`}
+					subtitle={`${project.data.year} • ${project.data.location}`}
+				/>
+			))}
+		</ul>
 
-	<p><Button href="/projects/">More projects</Button></p>
+		<p class="u-text-c u-mb-xxl"><Button href="/projects/">More projects</Button></p>
+	</section>
 
 	<LogoSection />
 
