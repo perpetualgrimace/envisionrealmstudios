@@ -26,10 +26,18 @@ import NavLinks from "./NavLinks.astro";
 		padding-left: $sp-lg;
 		padding-right: $sp-lg;
 		padding-bottom: $sp-xxs;
+
+		@media (max-width: 476px) {
+			justify-content: space-around;
+		}
 	}
 
 	.nav-logo {
 		margin-right: $sp-lg;
 		left: -$sp-xxs;
+
+		@media (max-width: 476px) {
+			left: $sp-xxs/2;
+		}
 	}
 </style>
